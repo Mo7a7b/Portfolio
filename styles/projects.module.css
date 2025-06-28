@@ -1,0 +1,144 @@
+.section {
+  padding: 100px 20px;
+  background: var(--background);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+.title {
+  font-family: monospace;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  border-left: 3px solid var(--foreground);
+  border-right: 3px solid var(--foreground);
+  padding: 0 10px;
+}
+
+.angle {
+  color: var(--foreground);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  width: 100%;
+}
+
+.project {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  border-radius: 25px;
+  border: 1px solid var(--foreground);
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 147, 0, 0.2);
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(255, 147, 0, 0.3);
+}
+
+.projectImage {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.02);
+}
+
+.projectName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 10px 0;
+  text-align: center;
+}
+
+.desc,
+.techs,
+.gLink {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 10px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.desc span,
+.techs span {
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* Limit height of long description and allow scroll */
+.desc span {
+  display: block;
+  max-height: 100px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.desc span::-webkit-scrollbar {
+  width: 6px;
+}
+
+.desc span::-webkit-scrollbar-thumb {
+  background-color: var(--foreground);
+  border-radius: 4px;
+}
+
+.gLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.githubLink {
+  text-decoration: underline;
+  transition: 0.3s;
+  font-weight: 400;
+}
+
+.githubLink:hover {
+  color: var(--foreground);
+}
+
+@media (max-width: 860px) {
+  .section {
+    padding: 60px 8px;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    padding: 0 5px;
+  }
+  .projects {
+    gap: 20px;
+  }
+  .project {
+    padding: 12px;
+    border-radius: 15px;
+    width: 100%;
+  }
+}

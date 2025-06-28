@@ -1,0 +1,118 @@
+/* TechStack.module.css */
+
+.techStackSection {
+  background: var(--background);
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.title {
+  font-family: monospace;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 50px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  border-left: 3px solid var(--foreground);
+  border-right: 3px solid var(--foreground);
+  padding: 0 10px;
+}
+
+.angle {
+  color: var(--foreground);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card {
+  position: relative;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 20px;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card:hover {
+  border: 2px solid var(--foreground);
+  box-shadow: 0 0 20px rgba(255, 165, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.logo {
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.techName {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--text);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .techName {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .techName {
+    font-size: 0.75rem;
+  }
+}
