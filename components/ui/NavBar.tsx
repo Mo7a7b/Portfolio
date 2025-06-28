@@ -3,7 +3,7 @@ import styles from "@/styles/header.module.css";
 import { useState, useEffect } from "react";
 
 function NavBar() {
-  const [isResponsive, setIsResponsive] = useState(false);
+  const [isResponsive, setIsResponsive] = useState(true);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
     const handleResize = () => {

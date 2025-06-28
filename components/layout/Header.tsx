@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import NavBar from "../ui/NavBar";
 import Link from "next/link";
 function Header() {
-  const [isResponsive, setIsResponsive] = useState(false);
+  const [isResponsive, setIsResponsive] = useState(true);
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1000) {
